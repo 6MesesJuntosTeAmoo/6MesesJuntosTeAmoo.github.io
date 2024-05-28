@@ -1,0 +1,217 @@
+/* CSS styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: black;
+}
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-image: url('background.gif'); /* URL de la imagen de fondo con flores */
+    background-size: cover;
+    background-repeat: repeat;
+    animation: backgroundAnimation 1000s linear infinite; /* Animación para mover las flores */
+}
+
+@keyframes backgroundAnimation {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 0; }
+}
+
+#loader-container {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    z-index: 99;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart {
+    width: 200px;
+    background-color: black;
+    aspect-ratio: 1;
+    z-index: 99;
+    
+    background:
+     radial-gradient(circle at 60% 65%, red 64%,#0000 65%) top left/50% 50%,
+     radial-gradient(circle at 40% 65%, red 64%,#0000 65%) top right/50% 50%,
+     conic-gradient(from -45deg at 50% 85.5%, red 90deg,#0000 0) bottom/100% 50%;
+     
+    background-repeat: no-repeat;
+    border-radius: 3px;
+    filter: blur(2px);
+}
+
+.centered-text {
+    margin-top: -250px;
+    text-align: center;
+    font-size: 50px;
+    z-index: 5;
+    font-family: Arvo, sans-serif; /* Cambiamos la fuente a Arvo */
+    color: white; /* Cambiamos el color del texto a blanco para que sea visible en el fondo negro */
+}
+
+#text-container {
+    display: none; /* Oculta el contenedor del mensaje durante la carga */
+    position: absolute;
+    cursor:default;
+    text-shadow: 3px 3px 3px rgba(255, 255, 255, 0.425);
+    width: 100%;
+    top: 50%;
+    z-index: 5;
+    transform: translateY(-50%);
+}
+#poem-container {
+    position: absolute;
+    width: 100%;
+    top: calc(50% + 20px); /* Alineación debajo del botón */
+    font-style: italic;
+    transform: translateY(-50%);
+    z-index: 5;
+    text-align: center;
+}
+#playlist-content {
+    position: absolute;
+    width: 70%; /* Cambiado de 100% a auto para que el ancho se ajuste al contenido */
+    top: calc(70% + 20px); /* Alineación debajo del botón */
+    font-style: italic;
+    transform: translateY(-50%);
+    z-index: 5;
+    text-align: center;
+    left: 50%; /* Centra horizontalmente el botón */
+    transform: translateX(-50%); /* Ajuste para centrar horizontalmente */
+}
+.poem-content {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: white;
+    z-index: 5;
+    padding: 10px;
+    cursor:default;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.5s;
+}
+@-moz-keyframes shine {
+    0% {
+      background-position: 0;
+    }
+    60% {
+      background-position: 180px;
+    }
+    100% {
+      background-position: 180px;
+    }
+  }
+  @-webkit-keyframes shine {
+    0% {
+      background-position: 0;
+    }
+    60% {
+      background-position: 180px;
+    }
+    100% {
+      background-position: 180px;
+    }
+  }
+  @-o-keyframes shine {
+    0% {
+      background-position: 0;
+    }
+    60% {
+      background-position: 180px;
+    }
+    100% {
+      background-position: 180px;
+    }
+  }
+  @keyframes shine {
+    0% {
+      background-position: 0;
+    }
+    60% {
+      background-position: 180px;
+    }
+    100% {
+      background-position: 180px;
+    }
+  }
+.spotify-content {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.5s;
+}
+
+.hidden {
+    display: none;
+    z-index: 5;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(80vh - 20px); /* Ajusta la altura para dejar espacio para el botón de Spotify */
+    overflow-y: auto; /* Añade desplazamiento vertical si es necesario */
+}
+
+#spotify-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Coloca el botón 20px desde el espacio de los poemas */
+    z-index: 5;
+}
+
+.button {
+    padding: 17px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 0;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: all 0.5s ease;
+    z-index: 5;
+}
+
+.button:hover {
+    letter-spacing: 1.2px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+}
+.button:active {
+    letter-spacing: 1.3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+    transform: translateY(0.5px);
+    transition: 100ms;
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

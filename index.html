@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz sorpresa!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="background" class="hidden"></div>
+
+    <div id="loader-container">
+        <div class="heart animate__animated animate__pulse" id="heart-loader"></div>
+    </div>
+
+    <div id="text-container">
+        <h1 class="centered-text" id="page-title" style="z-index: 98;">¡6 Meses con el amor de mi vida!</h1>
+    </div>
+    <!--  Aca esta lo de poemas       -->
+    <div id="button-container" class="hidden">
+        <div class="button-container">
+            <button id="show-poem-button" class="button">Un poema por cada día juntos</button>
+        </div>
+        <div id="poem-container" class="hidden">
+            <p id="poem-content" class="poem-content"></p>
+            <p id="playlist-content" class="playlist-content"><iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3K2j8erAbCbnVGjhRiJvjl?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>   
+</body>
+</html>
